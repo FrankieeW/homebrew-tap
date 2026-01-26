@@ -1,10 +1,10 @@
 class TaskNotifier < Formula
   desc "Task completion email notification with OpenCode integration"
   homepage "https://github.com/FrankieeW/task-notifier"
-  url "https://github.com/FrankieeW/task-notifier/archive/v1.0.3.tar.gz"
-  sha256 "2564092d0e2c4e59558c60eba8cfd425a9972469fed32562e6803eeb6f57b6c7"
+  url "https://github.com/FrankieeW/task-notifier/archive/v1.0.4.tar.gz"
+  sha256 "44530d2c91df18883fdd4d1404b5023a928831caceb58c738b14dc178947cf14"
   license "MIT"
-  version "1.0.3"
+  version "1.0.4"
 
   depends_on "python@3.11"
 
