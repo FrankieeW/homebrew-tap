@@ -1,7 +1,7 @@
 class LmfdbCli < Formula
   desc "CLI tool for querying LMFDB (L-Functions and Modular Forms Database)"
   homepage "https://github.com/FrankieeW/lmfdb-cli"
-  url "https://github.com/FrankieeW/lmfdb-cli.git", tag: "v1.2.2", revision: "50d6448abcbebd1edc364d870e541ebd00b7131f"
+  url "https://github.com/FrankieeW/lmfdb-cli.git", tag: "v1.3.0", revision: "90d5084370d91a8f20310721ea81883dc3d178f5"
   license "MIT"
   head "https://github.com/FrankieeW/lmfdb-cli.git", branch: "master"
 
