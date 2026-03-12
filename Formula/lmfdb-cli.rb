@@ -3,7 +3,7 @@ require "language/python"
 class LmfdbCli < Formula
   desc "CLI tool for querying LMFDB (L-Functions and Modular Forms Database)"
   homepage "https://github.com/FrankieeW/lmfdb-cli"
-  url "https://github.com/FrankieeW/lmfdb-cli.git", tag: "v1.2.0", revision: "ea827a5"
+  url "https://github.com/FrankieeW/lmfdb-cli.git", tag: "v1.2.0", revision: "ea827a5bd9277ffb3af6cd5a17acdded74a7f576"
   license "MIT"
   head "https://github.com/FrankieeW/lmfdb-cli.git", branch: "master"
 
