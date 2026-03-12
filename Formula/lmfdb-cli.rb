@@ -3,7 +3,7 @@ class LmfdbCli < Formula
   homepage "https://github.com/FrankieeW/lmfdb-cli"
   url "https://github.com/FrankieeW/lmfdb-cli.git", tag: "v1.3.0", revision: "90d5084370d91a8f20310721ea81883dc3d178f5"
   license "MIT"
-  head "https://github.com/FrankieeW/lmfdb-cli.git", branch: "master"
+  head "https://github.com/FrankieeW/lmfdb-cli.git", branch: "main"
 
   depends_on "go" => :build
 
