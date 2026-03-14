@@ -4,6 +4,19 @@ This is FrankieeW's Homebrew tap for custom formulae and casks.
 
 ## Available Formulae
 
+### Sfeed
+
+Simple RSS and Atom parser with various format programs.
+
+**Installation:**
+
+```bash
+brew tap frankieew/tap
+brew install sfeed
+```
+
+**Documentation:** https://git.codemadness.org/sfeed
+
 ### Task Notifier
 
 Task completion email notification with OpenCode integration.
