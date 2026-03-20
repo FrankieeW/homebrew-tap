@@ -1,7 +1,7 @@
 class CcswitchCli < Formula
   desc "CLI for managing CC Switch providers"
   homepage "https://github.com/FrankieeW/ccswitch-cli"
-  url "https://github.com/FrankieeW/ccswitch-cli.git", tag: "v0.1.0", revision: "9ccf714"
+  url "https://github.com/FrankieeW/ccswitch-cli.git", tag: "v0.1.0", revision: "826ad0e"
   license "MIT"
   head "https://github.com/FrankieeW/ccswitch-cli.git", branch: "main"
 
