@@ -34,6 +34,20 @@ brew install task-notifier --without-opencode
 
 **Documentation:** https://github.com/FrankieeW/task-notifier
 
+### LeanMgr
+
+Manage disposable `.lake` cache state across many Lean 4 projects: cross-project
+disk usage, toolchain and worktree audits, and dry-run-first cache cleanup.
+
+**Installation:**
+
+```bash
+brew tap frankieew/tap
+brew install leanmgr
+```
+
+**Documentation:** https://github.com/FrankieeW/leanmgr
+
 ## Usage
 
 After installing the tap:
