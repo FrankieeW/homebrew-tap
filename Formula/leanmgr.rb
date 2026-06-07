@@ -2,8 +2,8 @@ class Leanmgr < Formula
   desc "Manage disposable .lake cache state across many Lean 4 projects"
   homepage "https://github.com/FrankieeW/leanmgr"
   url "https://github.com/FrankieeW/leanmgr.git",
-      tag:      "v0.1.0",
-      revision: "a037c2c4871076dc53e369be4be11e796bbaa4c7"
+      tag:      "v0.2.0",
+      revision: "48ac8af44925a5f7d1a00ed4c7de4199fa0c2dc9"
   license "MIT"
   head "https://github.com/FrankieeW/leanmgr.git", branch: "main"
 
