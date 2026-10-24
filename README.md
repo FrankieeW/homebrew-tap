@@ -48,6 +48,23 @@ brew install leanmgr
 
 **Documentation:** https://github.com/FrankieeW/leanmgr
 
+### Headway
+
+Keep apps and CLI tools built from GitHub current on macOS: follow each repository
+commit by commit (build from source) or release by release (download the asset).
+The `headway` CLI is built for AI agents (`--ai` XML, `--json`, stable error codes);
+the menu-bar app shares its state.
+
+**Installation:**
+
+```bash
+brew tap frankieew/tap
+brew install frankieew/tap/headway          # the `headway` CLI
+brew install --cask frankieew/tap/headway   # the Headway menu-bar app
+```
+
+**Documentation:** https://github.com/FrankieeW/headway
+
 ## Usage
 
 After installing the tap:
