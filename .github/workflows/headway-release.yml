@@ -1,0 +1,40 @@
+name: Update Headway release
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: headway-release-pr
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Configure release bot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Fetch updater from Headway
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -H 'Accept: application/vnd.github.raw+json' \
+            repos/FrankieeW/headway/contents/scripts/update-homebrew-tap.mjs?ref=main \
+            > "$RUNNER_TEMP/update-homebrew-tap.mjs"
+      - name: Verify release and propose recipe updates
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node "$RUNNER_TEMP/update-homebrew-tap.mjs" --tap-root "$GITHUB_WORKSPACE" --apply --create-pr
