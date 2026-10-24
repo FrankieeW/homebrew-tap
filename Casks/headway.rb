@@ -1,13 +1,13 @@
 cask "headway" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.1.0"
-  sha256 arm:   "22336319c72b6dec6bfb4b63f4e52ab53e991d7dfac962da79345d9249a0bd88",
-         intel: "04c28cd3cd07e9ffc4ca3cfeb3b44888c6814dda0b240487ba4e97eeb9c655c9"
+  version "0.2.1"
+  sha256 arm:   "0159071575b29f8522d50865c740ae8bc493f30f25ea5913f10fdd4f0f4deb51",
+         intel: "33f06aecd3c3c9a12a13f50de8db6d202a6e6b0935d2602592f69050d49b02fc"
 
   url "https://github.com/FrankieeW/headway/releases/download/v#{version}/Headway-#{version}-#{arch}.dmg"
   name "Headway"
-  desc "Menu-bar app that keeps GitHub-built apps and CLI tools current"
+  desc "Keep apps and CLI tools current from multiple sources"
   homepage "https://github.com/FrankieeW/headway"
 
   depends_on macos: :monterey
