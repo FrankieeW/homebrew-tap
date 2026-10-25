@@ -2,8 +2,8 @@ class Headway < Formula
   desc "Keep apps and CLI tools current via GitHub, npm, Homebrew or scripts"
   homepage "https://github.com/FrankieeW/headway"
   url "https://github.com/FrankieeW/headway.git",
-      tag:      "v0.4.1",
-      revision: "0f388db77731af08a66d7499debb3a0a67748da7"
+      tag:      "v0.4.2",
+      revision: "09acb14c574074ec4e39f2abfa559b88e12b1d0d"
   license "MIT"
   head "https://github.com/FrankieeW/headway.git", branch: "main"
 
