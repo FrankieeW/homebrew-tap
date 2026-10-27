@@ -17,24 +17,34 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
       - name: Configure release bot
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-      - name: Fetch updater from Headway
+      - name: Fetch the latest release and its updater
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          set -euo pipefail
+          gh api repos/FrankieeW/headway/releases/latest > "$RUNNER_TEMP/release.json"
+          tag=$(jq -r .tag_name "$RUNNER_TEMP/release.json")
+          if [[ ! "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Unexpected release tag: $tag" >&2
+            exit 1
+          fi
+          # Run the updater published with this release, not whatever Headway's main branch holds.
           gh api -H 'Accept: application/vnd.github.raw+json' \
-            repos/FrankieeW/headway/contents/scripts/update-homebrew-tap.mjs?ref=main \
+            "repos/FrankieeW/headway/contents/scripts/update-homebrew-tap.mjs?ref=$tag" \
             > "$RUNNER_TEMP/update-homebrew-tap.mjs"
       - name: Verify release and propose recipe updates
         env:
           GH_TOKEN: ${{ github.token }}
-        run: node "$RUNNER_TEMP/update-homebrew-tap.mjs" --tap-root "$GITHUB_WORKSPACE" --apply --create-pr
+        run: |
+          node "$RUNNER_TEMP/update-homebrew-tap.mjs" --tap-root "$GITHUB_WORKSPACE" \
+            --release-json "$RUNNER_TEMP/release.json" --apply --create-pr
