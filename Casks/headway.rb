@@ -1,9 +1,9 @@
 cask "headway" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.4.2"
-  sha256 arm:   "75664f52513903a51074ef9463a2f6faba0c671b7543642ef3098ef3e255b194",
-         intel: "6ee24ddeb249c79c27e310c0e70fc496608354a7969ac2bb4aa1320c6fd59a22"
+  version "0.5.0"
+  sha256 arm:   "c424cdf08d5f651f01d7b32940623e9ca0999b84d50913be32a5e3ce412f467b",
+         intel: "f419236266c19c969cb3ff908c7370a9c3d9759aa8d8e313ecebbbdc190fc63c"
 
   url "https://github.com/FrankieeW/headway/releases/download/v#{version}/Headway-#{version}-#{arch}.dmg"
   name "Headway"
